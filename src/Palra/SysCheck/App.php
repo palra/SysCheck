@@ -10,7 +10,7 @@ use Symfony\Component\Console\Application;
  * Date: 13/10/16
  * Time: 16:51
  */
-class SysCheck extends Application
+class App extends Application
 {
     protected static $appName = 'SysCheck';
     protected static $version = '0.1.0';
