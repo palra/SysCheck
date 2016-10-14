@@ -1,0 +1,19 @@
+{
+    "name": "palra/sys-check",
+    "description": "Checks system requirements for your PHP applications",
+    "type": "project",
+    "require": {
+        "symfony/console": "^3.1"
+    },
+    "license": "MIT",
+    "bin": ["bin/syscheck"],
+    "authors": [
+        {
+            "name": "Loïc Payol",
+            "email": "loicpayol@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"": "src/"}
+    }
+}
