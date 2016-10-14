@@ -7,70 +7,64 @@
  */
 
 namespace Palra\SysCheck\Requirement;
-use Palra\SysCheck\Comparator\Comparator;
-
 /**
  * Describes a system requirement.
  * @package Palra\SysCheck
  */
-abstract class Requirement
+class Requirement
 {
     /**
-     * The name of the requirement. (ex: "MySQL Version")
-     * @var string
+     * Is the requirement fulfilled ?
+     * @var bool
      */
-    private $name;
+    private $fulfilled;
 
     /**
-     * A short description of the requirement.
-     * @var string|null
+     * Describes the requirement
+     * @var string
      */
     private $description;
 
     /**
-     * The required level of requirement. If set to null, the requirement is
-     * optional.
-     * @var string|null
+     * Is the requirement optional ?
+     * @var boolean
      */
-    private $requiredLevel;
+    private $optional;
 
     /**
-     * The recommended level of requirement. Can be set to null.
-     * @var string|null
+     * A message that will help the user to fulfill the requirement
+     * @var string
      */
-    private $recommendedLevel;
+    private $helpMessage;
 
     /**
-     * The comparator bound to the current requirement. Must be set in the
-     * implemented class' constructors.
-     * @var Comparator
+     * Requirement constructor.
+     * @param bool   $fulfilled   Is the requirement fulfilled ?
+     * @param string $description Descriptive message explaining the
+     *                            requirement
+     * @param string $helpMessage Help message in order to tell the user what
+     *                            to do to fulfill the requirement
+     * @param bool   $optional    Is the requirement optional ? Defaults to
+     *                            `false`.
      */
-    private $comparator;
-
-    /**
-     * Returns the actual level of requirement on the system.
-     * @return string
-     */
-    abstract public function checkActualLevel();
-
-    /**
-     * @return string
-     */
-    public function getName()
+    public function __construct($fulfilled, $description, $helpMessage, $optional = false)
     {
-        return $this->name;
+        $this->fulfilled = (bool) $fulfilled;
+        $this->description = $description;
+        $this->helpMessage = $helpMessage;
+        $this->optional = (bool) $optional;
     }
 
     /**
-     * @param string $name
+     * @return boolean
      */
-    protected function setName($name)
+    public function isFulfilled()
     {
-        $this->name = $name;
+        return $this->fulfilled;
     }
 
     /**
-     * @return null|string
+     * @return string
      */
     public function getDescription()
     {
@@ -78,58 +72,18 @@ abstract class Requirement
     }
 
     /**
-     * @param null|string $description
+     * @return boolean
      */
-    protected function setDescription($description)
+    public function isOptional()
     {
-        $this->description = $description;
+        return $this->optional;
     }
 
     /**
-     * @return null|string
+     * @return string
      */
-    public function getRequiredLevel()
+    public function getHelpMessage()
     {
-        return $this->requiredLevel;
-    }
-
-    /**
-     * @param null|string $requiredLevel
-     */
-    public function setRequiredLevel($requiredLevel)
-    {
-        $this->requiredLevel = $requiredLevel;
-    }
-
-    /**
-     * @return null|string
-     */
-    public function getRecommendedLevel()
-    {
-        return $this->recommendedLevel;
-    }
-
-    /**
-     * @param null|string $recommendedLevel
-     */
-    public function setRecommendedLevel($recommendedLevel)
-    {
-        $this->recommendedLevel = $recommendedLevel;
-    }
-
-    /**
-     * @return Comparator
-     */
-    public function getComparator()
-    {
-        return $this->comparator;
-    }
-
-    /**
-     * @param Comparator $comparator
-     */
-    protected function setComparator($comparator)
-    {
-        $this->comparator = $comparator;
+        return $this->helpMessage;
     }
 }

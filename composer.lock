@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8aab77307407497af105ac0024352def",
-    "content-hash": "1cd35312fce794be471492a5ec6187fb",
+    "hash": "659615bbaf60e245559cea9bc5ad99a3",
+    "content-hash": "80df8fdbbc1c5f984386ae8daac12552",
     "packages": [
         {
             "name": "psr/log",
@@ -232,45 +232,21 @@
             "time": "2016-05-18 14:26:46"
         },
         {
-            "name": "symfony/serializer",
+            "name": "symfony/yaml",
             "version": "v3.1.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/serializer.git",
-                "reference": "8de2ed908fafd717a2025ce054b65dd9d5e15f5e"
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "368b9738d4033c8b93454cb0dbd45d305135a6d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/serializer/zipball/8de2ed908fafd717a2025ce054b65dd9d5e15f5e",
-                "reference": "8de2ed908fafd717a2025ce054b65dd9d5e15f5e",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/368b9738d4033c8b93454cb0dbd45d305135a6d3",
+                "reference": "368b9738d4033c8b93454cb0dbd45d305135a6d3",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9"
-            },
-            "conflict": {
-                "symfony/property-access": ">=3.0,<3.0.4|>=2.8,<2.8.4"
-            },
-            "require-dev": {
-                "doctrine/annotations": "~1.0",
-                "doctrine/cache": "~1.0",
-                "phpdocumentor/reflection-docblock": "~3.0",
-                "symfony/cache": "~3.1",
-                "symfony/config": "~2.8|~3.0",
-                "symfony/http-foundation": "~2.8|~3.0",
-                "symfony/property-access": "~2.8|~3.0",
-                "symfony/property-info": "~3.1",
-                "symfony/yaml": "~2.8|~3.0"
-            },
-            "suggest": {
-                "doctrine/annotations": "For using the annotation mapping. You will also need doctrine/cache.",
-                "doctrine/cache": "For using the default cached annotation reader and metadata cache.",
-                "psr/cache-implementation": "For using the metadata cache.",
-                "symfony/config": "For using the XML mapping loader.",
-                "symfony/http-foundation": "To use the DataUriNormalizer.",
-                "symfony/property-access": "For using the ObjectNormalizer.",
-                "symfony/property-info": "To deserialize relations.",
-                "symfony/yaml": "For using the default YAML mapping loader."
             },
             "type": "library",
             "extra": {
@@ -280,7 +256,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Component\\Serializer\\": ""
+                    "Symfony\\Component\\Yaml\\": ""
                 },
                 "exclude-from-classmap": [
                     "/Tests/"
@@ -300,7 +276,7 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Symfony Serializer Component",
+            "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2016-09-25 08:27:07"
         }
@@ -1507,55 +1483,6 @@
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2016-02-04 12:56:52"
-        },
-        {
-            "name": "symfony/yaml",
-            "version": "v3.1.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "368b9738d4033c8b93454cb0dbd45d305135a6d3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/368b9738d4033c8b93454cb0dbd45d305135a6d3",
-                "reference": "368b9738d4033c8b93454cb0dbd45d305135a6d3",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Yaml\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Yaml Component",
-            "homepage": "https://symfony.com",
-            "time": "2016-09-25 08:27:07"
         },
         {
             "name": "webmozart/assert",
